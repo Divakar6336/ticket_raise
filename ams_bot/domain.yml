@@ -1,0 +1,62 @@
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- faq_response
+- ticket_generate
+- frequently_ask_questions
+- web_sense
+- software_installation
+- admin_access
+- request_for_laptop
+- hardware_issue
+- goodbye
+- affirm
+- inform
+slots:
+  description:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+responses:
+  utter_ask_description:
+  - text: Please enter the problem description.
+  utter_faq_message:
+  - text: Please ask qustions.
+  utter_goodbye:
+  - text: Thanks for using IT Helpdesk Bot!
+  utter_greet:
+  - buttons:
+    - payload: Frequently Asked Questions
+      title: Frequently Asked Questions
+    - payload: Ticket Generation
+      title: Ticket Generation
+    text: Hello User! How can I help you today ?
+  utter_ticket_generate:
+  - buttons:
+    - payload: Web Sense Issue
+      title: Web Sense Exception
+    - payload: software installation
+      title: Software Installation
+    - payload: admin access
+      title: Admin Access
+    - payload: request for laptop
+      title: Request for Laptop
+    - payload: hardware issue
+      title: Hardware Issue
+    text: Please select the type of ticket you want to generate.
+actions:
+- action_web_sense
+- action_software_installation
+- action_admin_access
+- action_request_for_laptop
+- action_hardware_issue
+- utter_ask_description
+- utter_goodbye
+- utter_greet
+- action_faq_response
+- utter_faq_message
+- utter_ticket_generate
+forms:
+- ticket_form

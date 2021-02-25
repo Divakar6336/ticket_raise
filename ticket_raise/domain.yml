@@ -1,0 +1,47 @@
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- web_sense
+- software_installation
+- admin_access
+- request_for_laptop
+- hardware_issue
+- goodbye
+- affirm
+- inform
+slots:
+  description:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+responses:
+  utter_ask_description:
+  - text: Please enter the problem description.
+  utter_goodbye:
+  - text: Thanks for using IT Helpdesk Bot!
+  utter_greet:
+  - buttons:
+    - payload: Web Sense Issue
+      title: Web Sense Exception
+    - payload: software installation
+      title: Software Installation
+    - payload: admin access
+      title: Admin Access
+    - payload: request for laptop
+      title: Request for Laptop
+    - payload: hardware issue
+      title: Hardware Issue
+    text: Hello User! How can I help you today ?
+actions:
+- action_web_sense
+- action_software_installation
+- action_admin_access
+- action_request_for_laptop
+- action_hardware_issue
+- utter_ask_description
+- utter_goodbye
+- utter_greet
+forms:
+- ticket_form
